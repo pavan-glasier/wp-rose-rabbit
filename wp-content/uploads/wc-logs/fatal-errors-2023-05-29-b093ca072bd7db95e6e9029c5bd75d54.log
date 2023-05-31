@@ -1,0 +1,258 @@
+2023-05-29T05:06:16+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\inc\woocommerce.php:167
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): rose_and_rabbit_woocommerce_cart_link_fragment('    <button cla...')
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters('    <button cla...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\add-to-cart-item-sidebar\inc\ajax-add-to-cart.php(24): WC_AJAX::get_refreshed_fragments()
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): woocommerce_ajax_add_to_cart('')
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-admin\admin-ajax.php(188): do_action('wp_ajax_woocomm...')
+#8 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\inc\woocommerce.php on line 167
+
+2023-05-29T05:06:43+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\add-to-cart-item-sidebar\inc\cart-count.php:15
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\shortcodes.php(355): woo_cart_but_count('', '', 'woo_cart_count')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woo_ca...', 'do_shortcode_ta...', '[woo_cart_count...')
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\header.php(366): do_shortcode('[woo_cart_count...')
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template.php(783): require_once('E:\\xampp\\htdocs...')
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template.php(718): load_template('E:\\xampp\\htdocs...', true, Array)
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\woocommerce\single-product.php(22): get_header('shop')
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(106): include('E:\\xampp\\htdocs...')
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#10 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#11 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\add-to-cart-item-sidebar\inc\cart-count.php on line 15
+
+2023-05-29T05:08:37+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\inc\woocommerce.php:167
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): rose_and_rabbit_woocommerce_cart_link_fragment('')
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters('', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#11 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#12 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#13 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\inc\woocommerce.php on line 167
+
+2023-05-29T05:08:59+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\inc\woocommerce.php:167
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): rose_and_rabbit_woocommerce_cart_link_fragment('')
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters('', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#11 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#12 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#13 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\inc\woocommerce.php on line 167
+
+2023-05-29T05:09:02+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\inc\woocommerce.php:167
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): rose_and_rabbit_woocommerce_cart_link_fragment('')
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters('', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\add-to-cart-item-sidebar\inc\ajax-add-to-cart.php(24): WC_AJAX::get_refreshed_fragments()
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): woocommerce_ajax_add_to_cart('')
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-admin\admin-ajax.php(188): do_action('wp_ajax_woocomm...')
+#8 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-content\themes\rose-rabbit\inc\woocommerce.php on line 167
+
+2023-05-29T05:52:59+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-admin\includes\plugin.php(691): do_action('activate_add-to...', false)
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-admin\plugins.php(58): activate_plugin('add-to-cart-ite...', 'http://192.168....', false)
+#4 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T05:53:00+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-admin\plugins.php(194): do_action('activate_add-to...')
+#3 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T05:53:00+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-admin\plugins.php(194): do_action('activate_add-to...')
+#3 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:24:15+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#12 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:24:17+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\add-to-cart-item-sidebar\inc\ajax-add-to-cart.php(24): WC_AJAX::get_refreshed_fragments()
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): woocommerce_ajax_add_to_cart('')
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-admin\admin-ajax.php(188): do_action('wp_ajax_woocomm...')
+#7 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:24:27+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\add-to-cart-item-sidebar\inc\ajax-add-to-cart.php(24): WC_AJAX::get_refreshed_fragments()
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): woocommerce_ajax_add_to_cart('')
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-admin\admin-ajax.php(188): do_action('wp_ajax_woocomm...')
+#7 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:24:47+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#12 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:25:28+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#12 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:27:48+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#12 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:28:18+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#12 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:28:24+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\add-to-cart-item-sidebar\inc\ajax-add-to-cart.php(24): WC_AJAX::get_refreshed_fragments()
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): woocommerce_ajax_add_to_cart('')
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-admin\admin-ajax.php(188): do_action('wp_ajax_woocomm...')
+#7 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:29:13+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#12 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
+2023-05-29T12:29:15+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "woo_cart_but_count" not found or invalid function name in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(211): apply_filters('woocommerce_add...', Array)
+#2 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::get_refreshed_fragments('')
+#3 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 E:\xampp\htdocs\rose_and_rabbit\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action('wc_ajax_get_ref...')
+#6 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax('')
+#7 E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#8 E:\xampp\htdocs\rose_and_rabbit\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 E:\xampp\htdocs\rose_and_rabbit\wp-includes\template-loader.php(13): do_action('template_redire...')
+#10 E:\xampp\htdocs\rose_and_rabbit\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\rose_and_rabbit\index.php(17): require('E:\\xampp\\htdocs...')
+#12 {main}
+  thrown in E:\xampp\htdocs\rose_and_rabbit\wp-includes\class-wp-hook.php on line 308
+
