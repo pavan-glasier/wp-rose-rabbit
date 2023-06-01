@@ -57,3 +57,13 @@
 .acf-admin-single-field-group .acf-field-object-flexible-content .acf-is-subfields .acf-field-object .acf-input {
     max-width: 100% !important;
 }
+
+.acf-fields > .acf-banner-content {
+    position: absolute !important;
+    width: auto;
+    top: 50%;
+    transform: translate(-8%, -48%);
+    background: #fff;
+    left: 50%;
+    right: 0;
+}
