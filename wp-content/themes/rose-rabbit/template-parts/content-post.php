@@ -11,7 +11,7 @@
     <div class="vs-blog blog-style1 mb-5">
         <div class="blog-img">
             <a href="<?php the_permalink();?>">
-                <?php echo do_shortcode('[post_featured_image]');?>
+                <?php echo do_shortcode('[featured_image]');?>
             </a>
         </div>
         <div class="blog-content text-center">

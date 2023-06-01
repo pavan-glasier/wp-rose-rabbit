@@ -1242,3 +1242,48 @@ a.text-theme:hover,
 .blogwidth {
   width: 90%;
 }
+
+
+
+
+
+
+
+/* CUSTOM CSS */
+/* .form-style1 input{
+  padding-left: 10px;
+} */
+.form-style1 .wpcf7-not-valid-tip {
+  font-size: .8em;
+  position: absolute;
+  top: -22px;
+}
+.wpcf7-spinner {
+  background: #fff;
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  transform: translate(32px, 7px);
+  margin: 0;
+}
+.wpcf7-spinner::before {
+  background-color: #222222;
+}
+.form-style1 form .wpcf7-response-output {
+  margin: .5em 0em 0em;
+  font-size: .8rem;
+  line-height: 1.5;
+  border-width: 1px;
+  padding: 0.2rem 0.5rem;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+  color: #46b450;
+}
+.wpcf7 form.failed .wpcf7-response-output, .wpcf7 form.aborted .wpcf7-response-output {
+  color: #dc3232;
+}
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+  color: #ffb900;
+}

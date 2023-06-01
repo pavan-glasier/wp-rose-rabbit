@@ -1,5 +1,5 @@
 <?php
-add_action('admin_menu','mcsfw_menu_settings');
+add_action('admin_menu', 'mcsfw_menu_settings');
 function mcsfw_menu_settings(){
     add_menu_page( 
         'Prodcut Side Cart', // page <title>Title</title>
@@ -28,7 +28,7 @@ function mcsfw_add_to_cart_settings(){
             <?php echo __('Text / Url','mini-cart-sidebar-for-woocommerce');?></li>
     </ul>
 
-    <?php
+<?php
 settings_fields( 'mcsfw_settings' );
 do_settings_sections( 'mcsfw_settings' );
 ?>
@@ -680,12 +680,7 @@ do_settings_sections( 'mcsfw_settings' );
                                     <?php checked('close_icon_4',get_option('close_icon')); ?>>
                                 <?php echo $mcsfw_icon['close_icon_4']; ?>
                             </label>
-
-                            <label class="close_radio radio-icons">
-                                <input type="radio" name="close_icon" value="close_icon_5"
-                                    <?php checked('close_icon_5', get_option('close_icon')); ?>>
-                                <?php echo $mcsfw_icon['close_icon_5']; ?>
-                            </label>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -1072,11 +1067,10 @@ function mcsfw_svg(){
                 <path d="M 35.16 63.084 h -7.508 c -0.552 0 -1 -0.447 -1 -1 V 45.148 c 0 -0.552 0.448 -1 1 -1 s 1 0.448 1 1 v 15.936 h 6.508 c 0.552 0 1 0.447 1 1 S 35.712 63.084 35.16 63.084 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                 <path d="M 62.439 63.343 h -5.61 c -0.553 0 -1 -0.447 -1 -1 s 0.447 -1 1 -1 h 5.61 c 1.096 0 1.987 -0.891 1.987 -1.986 v -2.624 c 0 -1.096 -0.892 -1.987 -1.987 -1.987 h -3.124 c -2.198 0 -3.986 -1.788 -3.986 -3.986 v -2.624 c 0 -2.198 1.788 -3.987 3.986 -3.987 h 4.027 c 0.553 0 1 0.448 1 1 s -0.447 1 -1 1 h -4.027 c -1.096 0 -1.986 0.892 -1.986 1.987 v 2.624 c 0 1.096 0.891 1.986 1.986 1.986 h 3.124 c 2.198 0 3.987 1.789 3.987 3.987 v 2.624 C 66.427 61.555 64.638 63.343 62.439 63.343 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" /></g>
                 </svg>',
-        'close_icon_5' => '<svg version="1.1" id="Layer_1" fill="#fff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25" height="25" viewBox="0 0 122.878 122.88" enable-background="new 0 0 122.878 122.88" xml:space="preserve"><g><path d="M1.426,8.313c-1.901-1.901-1.901-4.984,0-6.886c1.901-1.902,4.984-1.902,6.886,0l53.127,53.127l53.127-53.127 c1.901-1.902,4.984-1.902,6.887,0c1.901,1.901,1.901,4.985,0,6.886L68.324,61.439l53.128,53.128c1.901,1.901,1.901,4.984,0,6.886 c-1.902,1.902-4.985,1.902-6.887,0L61.438,68.326L8.312,121.453c-1.901,1.902-4.984,1.902-6.886,0 c-1.901-1.901-1.901-4.984,0-6.886l53.127-53.128L1.426,8.313L1.426,8.313z"/></g></svg>',
-
+                
         'trash_icon1' => '<svg width="25" height="25" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M413.7,133.4c-2.4-9-4-14-4-14c-2.6-9.3-9.2-9.3-19-10.9l-53.1-6.7c-6.6-1.1-6.6-1.1-9.2-6.8c-8.7-19.6-11.4-31-20.9-31   h-103c-9.5,0-12.1,11.4-20.8,31.1c-2.6,5.6-2.6,5.6-9.2,6.8l-53.2,6.7c-9.7,1.6-16.7,2.5-19.3,11.8c0,0-1.2,4.1-3.7,13   c-3.2,11.9-4.5,10.6,6.5,10.6h302.4C418.2,144.1,417,145.3,413.7,133.4z"/><path d="M379.4,176H132.6c-16.6,0-17.4,2.2-16.4,14.7l18.7,242.6c1.6,12.3,2.8,14.8,17.5,14.8h207.2c14.7,0,15.9-2.5,17.5-14.8   l18.7-242.6C396.8,178.1,396,176,379.4,176z"/></g></svg>',
 
-        'trash_icon2' => '<svg width="25" height="25" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.61 122.88"><title>trash</title><path d="M39.27,58.64a4.74,4.74,0,1,1,9.47,0V93.72a4.74,4.74,0,1,1-9.47,0V58.64Zm63.6-19.86L98,103a22.29,22.29,0,0,1-6.33,14.1,19.41,19.41,0,0,1-13.88,5.78h-45a19.4,19.4,0,0,1-13.86-5.78l0,0A22.31,22.31,0,0,1,12.59,103L7.74,38.78H0V25c0-3.32,1.63-4.58,4.84-4.58H27.58V10.79A10.82,10.82,0,0,1,38.37,0H72.24A10.82,10.82,0,0,1,83,10.79v9.62h23.35a6.19,6.19,0,0,1,1,.06A3.86,3.86,0,0,1,110.59,24c0,.2,0,.38,0,.57V38.78Zm-9.5.17H17.24L22,102.3a12.82,12.82,0,0,0,3.57,8.1l0,0a10,10,0,0,0,7.19,3h45a10.06,10.06,0,0,0,7.19-3,12.8,12.8,0,0,0,3.59-8.1L93.37,39ZM71,20.41V12.05H39.64v8.36ZM61.87,58.64a4.74,4.74,0,1,1,9.47,0V93.72a4.74,4.74,0,1,1-9.47,0V58.64Z"/></svg>',
+        'trash_icon2' => '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="163.839" height="163.839" viewBox="0,0,256,256"><g fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(0.05905,0.05905)"><path d="M2841,1240l260,266l5,4l-5,5l-682,663l615,614l67,59l5,4l-5,5l-260,266l-5,4l-5,-5l-660,-706l-1,1v-8v-2h-2v2v8l-1,-1l-660,706l-4,5l-5,-4l-261,-266l-4,-5l4,-4l68,-59l615,-614l-683,-663l-4,-5l4,-4l261,-266l5,-5l4,5l661,709v1h2v-1l661,-709l5,-5z"></path></g></g></svg>',
 
         'trash_icon3' => '<svg width="25" height="25" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 464C32 490.5 53.5 512 80 512h288c26.5 0 48-21.5 48-48V128H32V464zM304 208C304 199.1 311.1 192 320 192s16 7.125 16 16v224c0 8.875-7.125 16-16 16s-16-7.125-16-16V208zM208 208C208 199.1 215.1 192 224 192s16 7.125 16 16v224c0 8.875-7.125 16-16 16s-16-7.125-16-16V208zM112 208C112 199.1 119.1 192 128 192s16 7.125 16 16v224C144 440.9 136.9 448 128 448s-16-7.125-16-16V208zM432 32H320l-11.58-23.16c-2.709-5.42-8.25-8.844-14.31-8.844H153.9c-6.061 0-11.6 3.424-14.31 8.844L128 32H16c-8.836 0-16 7.162-16 16V80c0 8.836 7.164 16 16 16h416c8.838 0 16-7.164 16-16V48C448 39.16 440.8 32 432 32z"/></svg>',
 

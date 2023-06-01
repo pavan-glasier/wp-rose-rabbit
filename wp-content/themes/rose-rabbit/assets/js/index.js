@@ -95,7 +95,7 @@
            );
         });
      }),
-     (a = ".sidemenu-wrapper"),
+     (a = ".sidemenu-wrapper_"),
      (n = ".sideMenuCls"),
      (o = "show"),
      e(".sideMenuToggler").on("click", function (t) {

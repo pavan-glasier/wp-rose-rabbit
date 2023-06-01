@@ -31,9 +31,7 @@ include_once('inc/sidebar-frontend.php');
 function MCSFW_load_script_style(){
    wp_enqueue_script('jquery', false, array(), false, false);
    
-   // wp_enqueue_script("jquery");
-   // wp_enqueue_script("jquery-ui-core");
-   wp_enqueue_script( 'jquery-cartsidebar', MCSFW_PLUGIN_DIR. '/assets/js/pscfw_fronted.js', array('jquery'), '1.0');
+   wp_enqueue_script( 'jquery-cartsidebar', MCSFW_PLUGIN_DIR. '/assets/js/mcsfw_fronted.js', array('jquery'), '1.0');
    wp_enqueue_script( 'jquery-effects-core' );
    $passarray =  array( 
        'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -41,20 +39,19 @@ function MCSFW_load_script_style(){
        'basekt_position' => get_option('basekt_position'),
    );
    wp_localize_script( 'jquery-cartsidebar', 'addtocart_sidebar',$passarray);
-   wp_enqueue_style( 'jquery-cartsidebar-style', MCSFW_PLUGIN_DIR. '/assets/css/pscfw_fronted.css', '', '1.0' );
-   wp_enqueue_script( 'jquery-cartsidebars', MCSFW_PLUGIN_DIR. '/assets/js/pscfw_fontawesome.js', array('jquery'), '1.0');
+   wp_enqueue_style( 'jquery-cartsidebar-style', MCSFW_PLUGIN_DIR. '/assets/css/mcsfw_fronted.css', array(), true );
+   wp_enqueue_script( 'jquery-cartsidebars', MCSFW_PLUGIN_DIR. '/assets/js/mcsfw_fontawesome.js', array('jquery'), '1.0');
 }
 add_action( 'wp_enqueue_scripts', 'MCSFW_load_script_style' );
 
 function MCSFW_load_admin_script(){
    wp_enqueue_script('jquery', false, array(), false, false);
    wp_enqueue_style( 'wp-color-picker' );
-   // wp_enqueue_style( 'woocommerce_admin_styles-css', WP_PLUGIN_URL. '/woocommerce/assets/css/admin.css',false,'1.0',"all");
    wp_enqueue_script( 'wp-color-picker-alpha', MCSFW_PLUGIN_DIR . '/assets/js/wp-color-picker-alpha.js', array( 'wp-color-picker' ), '1.0', true );
-   wp_enqueue_style( 'jquery-admin-style', MCSFW_PLUGIN_DIR. '/assets/css/pscfw_backend.css', '', '1.0' );
-   wp_enqueue_style( 'jquery-admin-select', MCSFW_PLUGIN_DIR. '/assets/css/select2.min.css', '', '4.1.0' );
-   wp_enqueue_script( 'jquery-admin-select', MCSFW_PLUGIN_DIR. '/assets/js/select2.min.js', '', '4.1.0');
-   wp_enqueue_script( 'jquery-admin-cartsidebar', MCSFW_PLUGIN_DIR. '/assets/js/pscfw_backend.js', array('jquery'), '1.0');
+   wp_enqueue_style( 'jquery-admin-style', MCSFW_PLUGIN_DIR. '/assets/css/mcsfw_backend.css', array(), true );
+   wp_enqueue_style( 'jquery-admin-select', MCSFW_PLUGIN_DIR. '/assets/css/select2.min.css', array(), true );
+   wp_enqueue_script( 'jquery-admin-select', MCSFW_PLUGIN_DIR. '/assets/js/select2.min.js', array(), true );
+   wp_enqueue_script( 'jquery-admin-cartsidebar', MCSFW_PLUGIN_DIR. '/assets/js/mcsfw_backend.js', array('jquery'), '1.0');
    
 }
 add_action( 'admin_enqueue_scripts', 'MCSFW_load_admin_script' );

@@ -81,6 +81,8 @@ $table_prefix = 'rr_';
  */
 define( 'WP_DEBUG', false );
 
+define( 'WPCF7_AUTOP', false );
+
 /* Add any custom values between this line and the "stop editing" line. */
 
 define( 'ALLOW_UNFILTERED_UPLOADS', true );

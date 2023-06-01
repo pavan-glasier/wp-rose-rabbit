@@ -69,20 +69,12 @@ function mcsfw_add_to_cart_popup(){
 <script type="text/javascript">
 setTimeout(function() {
     jQuery(".cart_icon").trigger('click');
-
     jQuery("body").addClass("cart_sidebar");
-    // jQuery(".cart_container").addClass("product_detail");
-    jQuery(".popup_overlay").addClass("close-btn");
-
-    if (jQuery('.cart_icon').hasClass('atc_custom')) {
-        jQuery('.cart_icon').removeClass('atc_custom');
-    }
-
+    jQuery(".popup_overlay").addClass("display");
     jQuery(".mcsfw_atc_success_message").slideDown(1000);
-
     setTimeout(function() {
         jQuery('.mcsfw_atc_success_message').slideUp();
-    }, 4000);
+    }, 1000);
 }, 100);
 </script>
 <?php } ?>
@@ -138,6 +130,8 @@ setTimeout(function() {
 .mcsfw_remove svg {
     fill: <?php echo esc_attr($pd_color);?>;
     transition: all .3s ease;
+    width: 25px;
+    height: 25px;
 }
 .mcsfw_remove svg:hover {
     fill: <?php echo esc_attr($pdc_hover);?>;
@@ -158,13 +152,6 @@ setTimeout(function() {
     font-size: <?php echo esc_attr($btn_font_size); ?>px;
 }
 
-/* .top-flex .mcsfw_checkout_btn:hover,
-.top-flex .mcsfw_continue_shopping_btn:hover,
-.top-flex .mcsfw_view_cart_btn:hover {
-    background: <?php echo esc_attr($cbh_color);?>;
-    color: <?php echo esc_attr($btnh_color);?>;
-} */
-
 .cart_icon {
     <?php if($basekt_position=='left') { ?>left: 15px; <?php }
     else if($basekt_position=='right') { ?>right: 15px; <?php } ?>
@@ -173,11 +160,19 @@ setTimeout(function() {
     background-color: <?php echo esc_attr($basket_bg_color); ?>;
 }
 
-.sidemenu-wrapper .sidemenu-content {
+.cart-sidemenu-wrapper .sidemenu-content {
     <?php if($basekt_position=='left') { ?>left: -<?php echo esc_attr($sidebar_max_width);?>px; <?php }
-    else if($basekt_position=='right') { ?>right: -<?php echo esc_attr($sidebar_max_width);?>px;<?php }
+    else if($basekt_position=='rightt') { ?>right: -<?php echo esc_attr($sidebar_max_width);?>px;<?php }
     ?>width: <?php echo esc_attr($sidebar_max_width); ?>px;
 }
+.cart-sidemenu-wrapper.right.shows {
+    transform: translateX(-<?php echo esc_attr($sidebar_max_width);?>px);
+}
+
+.cart-sidemenu-wrapper.left.shows {
+    transform: translateX(<?php echo esc_attr($sidebar_max_width);?>px);
+}
+
 .footer-heding-bottom{
     width: <?php echo esc_attr($sidebar_max_width); ?>px;
 }
@@ -199,8 +194,8 @@ setTimeout(function() {
 }
 </style>
 
-<div class="sidemenu-wrapper d-lg-block <?php echo $basekt_position;?>">
 <div class="popup_overlay"></div>
+<div class="cart-sidemenu-wrapper d-lg-block <?php echo $basekt_position;?>">
     <div class="sidemenu-content <?php echo $basekt_position;?>">
         <div class="sidemenu-peid">
             <div class="heding-top">
@@ -209,7 +204,7 @@ setTimeout(function() {
                     <h2 class="text-<?php echo $header_heading_position;?>"><?php echo esc_attr($cart_head_text); ?></h2>
                     <?php } ?>
                     <?php if($enable_header_close == 'true') { ?>
-                    <button class="closeButton sideMenuCls" id="close-btn"> <!-- .sideMenuCls-->
+                    <button class="closeButton" id="close-btn"> <!-- .sideMenuCls-->
                         <?php
                             if($close_icon == 'close_icon_1'){
                                 echo html_entity_decode(esc_attr($mcsfw_icon['close_icon_1']));
@@ -440,7 +435,7 @@ setTimeout(function() {
         </div>
     </div>
 </div>
-<div class="sideMenuToggler cart_icon atc_custom <?php if($atc_enable == true){ echo "atc_disblock"; }?> <?php if($mobile_en == true){echo "atcmo_disblock";} ?>">
+<div class="cart_icon atc_custom <?php if($atc_enable == true){ echo "atc_disblock"; }?> <?php if($mobile_en == true){echo "atcmo_disblock";} ?>">
     <div class="sidebar_cart_count">
         <div class="cart_product_count">
             <?php 
@@ -483,6 +478,7 @@ function mcsfw_atcaiofw_cart() {
     $close_icon = get_option('close_icon','close_icon_1');
     $cart_head_text = get_option('cart_head_text','Your Cart');
     $cart_btn_text = get_option('cart_btn_text','View Cart');
+    $header_heading_position = get_option('header_heading_position','center');
     $checkout_btn_text = get_option('checkout_btn_text','Checkout Now');
     $shopping_btn_text = get_option('shopping_btn_text','Keep Shopping');
     $empty_cart_text = get_option('empty_cart_text','Your cart is empty.');
@@ -511,15 +507,17 @@ setTimeout(function() {
 
 </script>
 <div class="mcsfw_atc_success_message">
+    <i class="fa fa-check-circle" aria-hidden="true"></i>
     <?php echo __('Item has been added to the cart.', 'mini-cart-sidebar-for-woocommerce'); ?>
 </div>
+
 <div class="heding-top">
     <div class="top-flex">
         <?php if(!empty($cart_head_text)){ ?>
-        <h2><?php echo esc_attr($cart_head_text); ?></h2>
+        <h2 class="text-<?php echo $header_heading_position;?>"><?php echo esc_attr($cart_head_text); ?></h2>
         <?php } ?>
         <?php if($enable_header_close == 'true') { ?>
-        <button class="closeButton sideMenuCls" id="close-btn"> <!-- .sideMenuCls-->
+        <button class="closeButton" id="close-btn"> <!-- .sideMenuCls-->
             <?php
             if($close_icon == 'close_icon_1'){
                 echo html_entity_decode(esc_attr($mcsfw_icon['close_icon_1']));
@@ -789,10 +787,12 @@ function mcsfw_remove_product_from_cart() {
             WC()->cart->remove_cart_item($item_key);
         }
     }
+
     $trash_icon = get_option('trash_icon','fa-solid fa-trash');
     $close_icon = get_option('close_icon','close_icon_1');
     $cart_head_text = get_option('cart_head_text','Your Cart');
     $cart_btn_text = get_option('cart_btn_text','View Cart');
+    $header_heading_position = get_option('header_heading_position','center');
     $checkout_btn_text = get_option('checkout_btn_text','Checkout Now');
     $shopping_btn_text = get_option('shopping_btn_text','Keep Shopping');
     $empty_cart_text = get_option('empty_cart_text','Your cart is empty.');
@@ -820,15 +820,18 @@ setTimeout(function() {
     jQuery('.mcsfw_atc_remove_message').slideUp();
 }, 1000);
 </script>
-<div class="mcsfw_atc_remove_message"><?php echo __('Item removed.','mini-cart-sidebar-for-woocommerce'); ?></div>
+<div class="mcsfw_atc_remove_message">
+    <i class="fa fa-check-circle" aria-hidden="true"></i>
+    <?php echo __('Item removed.','mini-cart-sidebar-for-woocommerce'); ?>
+</div>
 
 <div class="heding-top">
     <div class="top-flex">
         <?php if(!empty($cart_head_text)){ ?>
-        <h2><?php echo esc_attr($cart_head_text); ?></h2>
+        <h2 class="text-<?php echo $header_heading_position;?>"><?php echo esc_attr($cart_head_text); ?></h2>
         <?php } ?>
         <?php if($enable_header_close == 'true') { ?>
-        <button class="closeButton sideMenuCls" id="close-btn"> <!-- .sideMenuCls-->
+        <button class="closeButton" id="close-btn"> <!-- .sideMenuCls-->
             <?php
             if($close_icon == 'close_icon_1'){
                 echo html_entity_decode(esc_attr($mcsfw_icon['close_icon_1']));
@@ -1101,7 +1104,7 @@ add_action( 'wp_ajax_nopriv_mcsfw_atcpro_qty_val', 'mcsfw_atcpro_qty_val' );
 
 
 /* Add to cart slider */
-function mcsfw_add_to_cart_slider_pro(){
+function woocommerce_ajax_add_to_cart(){
     $product_id = apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
     $product_status = get_post_status($product_id);
     if (WC()->cart->add_to_cart($product_id) && 'publish' === $product_status) {
@@ -1111,5 +1114,5 @@ function mcsfw_add_to_cart_slider_pro(){
     }
     wp_die();
 }
-add_action('wp_ajax_mcsfw_add_to_cart_slider_pro', 'mcsfw_add_to_cart_slider_pro');
-add_action('wp_ajax_nopriv_mcsfw_add_to_cart_slider_pro', 'mcsfw_add_to_cart_slider_pro');
+add_action('wp_ajax_woocommerce_ajax_add_to_cart', 'woocommerce_ajax_add_to_cart');
+add_action('wp_ajax_nopriv_woocommerce_ajax_add_to_cart', 'woocommerce_ajax_add_to_cart');

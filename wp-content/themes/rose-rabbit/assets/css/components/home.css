@@ -411,7 +411,7 @@
 	filter: none;
 	transition: all ease 0.4s;
 	transform: rotateY(0);
-	padding-top:30px !important;
+	/* padding-top:30px !important; */
 }
 
 .service-style1 .vs-icon img {

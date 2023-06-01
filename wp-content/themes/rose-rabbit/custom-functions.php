@@ -7,6 +7,23 @@
  * @package Rose_and_Rabbit
  */
 
+
+ if ( ! function_exists( 'rose_and_rabbit_register_nav_menu' ) ) {
+
+	function rose_and_rabbit_register_nav_menu(){
+		$args = array();
+		if( have_rows('register_menus', 'option') ):
+			while(have_rows('register_menus', 'option')): the_row();
+			$args = array_merge($args, array(
+				get_sub_field('name') => __( get_sub_field('label'), 'rose_and_rabbit' ),
+			));
+			endwhile; 
+		endif;
+		register_nav_menus( $args );
+	}
+	add_action( 'after_setup_theme', 'rose_and_rabbit_register_nav_menu', 0 );
+}
+
 if (!function_exists('rose_and_rabbit_style_css')) {
 	function rose_and_rabbit_style_css(){
 		wp_register_style( 'marcellus', 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Marcellus&amp;display=swap' );
@@ -29,7 +46,7 @@ if (!function_exists('rose_and_rabbit_script_js')) {
 		// wp_register_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js', null, null, true );
 		// wp_enqueue_script('jquery');
 
-		wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', null, null, true );
+		wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array(), true );
 		wp_enqueue_script('slick');
 
 		wp_enqueue_script('index-js', get_template_directory_uri() . '/assets/js/index.js', array(), true); 
@@ -38,6 +55,15 @@ if (!function_exists('rose_and_rabbit_script_js')) {
 	}
 	add_action('wp_footer', 'rose_and_rabbit_script_js');
 }
+
+// add css file in admin for acf
+function acf_admin_theme_style()
+{
+	wp_enqueue_style('acf-admin', get_template_directory_uri() . '/assets/css/acf-admin.css');
+}
+add_action('admin_enqueue_scripts', 'acf_admin_theme_style');
+add_action('login_enqueue_scripts', 'acf_admin_theme_style');
+
 
 
 // Allow to upload svg
@@ -49,7 +75,26 @@ function rose_and_rabbit_mime_types($mimes)
 	return $mimes;
 }
 add_filter('upload_mimes', 'rose_and_rabbit_mime_types');
-// add_filter('mime_types',  'rose_and_rabbit_mime_types');
+add_filter('mime_types',  'rose_and_rabbit_mime_types');
+
+
+//** * Enable preview / thumbnail for webp image files.*/
+function webp_is_displayable($result, $path) {
+    if ($result === false) {
+        $displayable_image_types = array( IMAGETYPE_WEBP );
+        $info = @getimagesize( $path );
+        if (empty($info)) {
+            $result = false;
+        } elseif (!in_array($info[2], $displayable_image_types)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+    }
+    return $result;
+}
+add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
+
 
 
 
@@ -121,19 +166,8 @@ function megamenu_save( $menu_id, $menu_item_db_id, $menu_item_args ) {
 		}
 	}
 }
-
 add_action( 'wp_update_nav_menu_item', 'megamenu_save', 10, 3 );
 
-
-// function megamenu_filter_walker( $walker ) {
-//     $walker = 'MegaMenu_Walker_Edit';
-//     if ( ! class_exists( $walker ) ) {
-//         require_once dirname( __FILE__ ) . '/custom-templates/walker-nav-menu-edit.php';
-//     }
-//     return $walker;
-// }
-
-// add_filter( 'wp_edit_nav_menu_walker', 'megamenu_filter_walker', 99 );
 
 function post_featured_image(){
 	$attr = ['title' => get_the_title(), 'alt' => get_the_title(), 'loading' => 'lazy'];
@@ -143,7 +177,7 @@ function post_featured_image(){
 	<img width="450" height="450" src="<?php echo site_url('/wp-content/uploads/2023/05/no-img.webp');?>" loading="<?php echo $attr['loading'];?>" title="<?php echo $attr['title'];?>" alt="<?php echo $attr['alt'];?>" decoding="async">
 	<?php endif;
 }
-add_shortcode('post_featured_image', 'post_featured_image');
+add_shortcode('featured_image', 'post_featured_image');
 
 function rose_and_rabbit_pagination(){
 	$allowed_tags = [
@@ -161,7 +195,6 @@ function rose_and_rabbit_pagination(){
 			'class' => [],
 		],
 	];
-
 
 	$args = [
 		'type'=>'list',
@@ -181,3 +214,56 @@ function rose_and_rabbit_pagination(){
 	printf('<ul class="pagination justify-content-center">%s</ul>', wp_kses( $paginationLink, $allowed_tags ) );
 }
 add_shortcode('rose_and_rabbit_pagination', 'rose_and_rabbit_pagination');
+
+
+
+
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init() {
+	if (function_exists('acf_add_options_page')) {
+		// Theme General Options
+		$general_options   = array(
+			'page_title' 	=> __('Theme General Options', 'rose_and_rabbit'),
+			'menu_title'	=> __('Theme Options', 'rose_and_rabbit'),
+			'menu_slug' 	=> 'theme-general-options',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> true,
+			'icon_url'      => 'dashicons-screenoptions',
+			'position'      => 2
+		);
+		acf_add_options_page($general_options);
+
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Header',
+			'menu_title'	=> 'Theme Header',
+			'parent_slug'	=> 'theme-general-options',
+		));
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Footer',
+			'menu_title'	=> 'Theme Footer',
+			'parent_slug'	=> 'theme-general-options',
+		));
+	}
+}
+
+
+
+
+add_action( 'phpmailer_init', 'send_smtp_email' );
+function send_smtp_email( $phpmailer ) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host       = 'smtp-relay.sendinblue.com';
+    $phpmailer->Port       = '587';
+    $phpmailer->SMTPSecure = 'tls';
+    $phpmailer->SMTPAuth   = true;
+    $phpmailer->Username   = 'pavan@glasier.in';
+    $phpmailer->Password   = '4tD3PXKsgTRvb8wF';
+    $phpmailer->From       = 'pavanvish001@yopmail.com';
+    $phpmailer->FromName   = 'Rose & Rabbit';
+    // $phpmailer->addReplyTo('pavanvish001@yopmail.com', 'Information');
+}
+
+// add_filter( 'wp_mail_content_type','set_my_mail_content_type' );
+// function set_my_mail_content_type() {
+//     return "text/html";
+// }

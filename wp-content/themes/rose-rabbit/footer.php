@@ -10,143 +10,164 @@
  */
 
 ?>
- <!--Footer-->
- <footer class="footer-wrapper footer-layout1">
+<!--Footer-->
+<footer class="footer-wrapper footer-layout1">
+    <?php if( have_rows('footer_top', 'option') ): ?>
+    <?php while( have_rows('footer_top', 'option') ): the_row(); ?>
     <div class="footer-top">
-       <div class="container">
-          <div class="row align-items-stretch">
-             <div class="col-md-4  d-lg-flex">
-                <div class="social-style2">
-                   <a href="#">
-                      <i class="fab fa-facebook-f"></i>
-                   </a>
-                   <a href="#">
-                      <i class="fab fa-twitter"></i>
-                   </a> <a href="#">
-                      <i class="fab fa-instagram"></i>
-                   </a>
-                   <a href="#">
-                      <i class="fab fa-linkedin-in"></i>
-                   </a>
-                </div>
-             </div>
-             <div class="col-md-5 col-lg-4">
-                <div class="vs-logo">
-					<a href="#">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-Logo.png" alt="logo">
-					</a>
-				</div>
-             </div>
-             <div class="col-md-7 col-lg-4">
-                <form action="#" class="form-style1">
-                   <h3 class="form-title">Lorem, ipsum dolor.</h3>
-                   <div class="form-group">
-						<input type="email" placeholder="Enter your email...">
-						<button class="vs-btn" type="submit">Subscribe</button>
-					</div>
-                </form>
-             </div>
-          </div>
-       </div>
+        <div class="container">
+            <div class="row align-items-stretch">
+
+               <div class="col-md-4 d-lg-flex">
+                  <?php if( have_rows('social_media', 'option') ): ?>
+                  <div class="social-style2">
+                     <?php while( have_rows('social_media', 'option') ): the_row(); ?>
+                     <a href="<?php echo get_sub_field('url'); ?>">
+                        <?php echo get_sub_field('icon'); ?>
+                     </a>
+                     <?php endwhile; ?>
+                  </div>
+                  <?php endif; ?>
+               </div>
+
+               <div class="col-md-5 col-lg-4">
+                  <?php if( get_sub_field('footer_logo', 'option') ): ?>
+                  <div class="vs-logo">
+                     <a href="<?php echo home_url('/'); ?>">
+                        <img src="<?php echo get_sub_field('footer_logo', 'option')['url']; ?>" alt="<?php echo get_sub_field('footer_logo', 'option')['alt']; ?>">
+                     </a>
+                  </div>
+                  <?php endif; ?>
+               </div>
+
+               <div class="col-md-7 col-lg-4">
+                  <?php if( have_rows('newsletter', 'option') ): ?>
+                  <?php while( have_rows('newsletter', 'option') ): the_row(); ?>
+                  <?php if( !empty( get_sub_field('select_form') ) ): ?>
+                  <div class="form-style1">
+                     <h3 class="form-title"><?php echo get_sub_field('heading');?></h3>
+                     <?php echo do_shortcode('[contact-form-7 id="'.get_sub_field('select_form').'"]'); ?>
+                  </div>
+                  <?php endif; ?>
+                  <?php endwhile; ?>
+                  <?php endif; ?>
+               </div>
+
+            </div>
+        </div>
     </div>
+    <?php endwhile; ?>
+    <?php endif; ?>
+
+
+    <?php if( have_rows('footer_bottom', 'option') ): ?>
     <div class="widget-area">
-       <div class="container">
-          <div class="row justify-content-between">
-             <div class="col-md-6 col-xl-auto">
-                <div class="widget footer-widget">
-                   <h3 class="widget_title">Lorem, ipsum dolor.</h3>
-                   <p class="footer-info"><i class="fal fa-map-marker-alt text-theme me-2"></i> Lorem ipsum
-                      dolor sit.<br><a href="tel:+911234567890" class="text-inherit"><i class="fa fa-phone-alt text-theme me-2"></i>+91 98765 43215</a><br><a class="text-inherit" href="mailto:"><i class="fal fa-envelope text-theme me-2"></i>lorem@gamil.com</a>
-                   </p>
+        <div class="container">
+            <div class="row justify-content-between">
+               <?php while( have_rows('footer_bottom', 'option') ): the_row(); ?>
+                <div class="<?php echo get_sub_field('column_size');?> col-xl-auto">
+                    <div class="widget<?php echo ( !empty( get_sub_field('links') ) )?' widget_nav_menu':''; ?> footer-widget">
+                        <?php if( !empty( get_sub_field('heading') ) ): ?>
+                        <h3 class="widget_title"><?php echo get_sub_field('heading');?></h3>
+                        <?php endif; ?>
+
+                        <?php if( have_rows('contact_info') ): ?>
+                        <?php while( have_rows('contact_info') ): the_row(); ?>
+                        <?php if( empty(get_sub_field('address')) && empty(get_sub_field('phone')) && empty(get_sub_field('email')) ): ?>
+                        <?php else: ?>
+                        <p class="footer-info">
+
+                           <?php if( !empty(get_sub_field('address')) ): ?>
+                           <i class="fal fa-map-marker-alt text-theme me-2"></i> 
+                           <?php echo get_sub_field('address');?><br>
+                           <?php endif; ?>
+
+                           <?php if( !empty(get_sub_field('phone')) ): ?>
+                           <a href="tel:<?php echo get_sub_field('phone');?>" class="text-inherit">
+                              <i class="fa fa-phone-alt text-theme me-2"></i>
+                              <?php echo get_sub_field('phone');?>
+                           </a>
+                           <br>
+                           <?php endif; ?>
+
+                           <?php if( !empty(get_sub_field('email')) ): ?>
+                           <a class="text-inherit" href="mailto:<?php echo get_sub_field('email');?>">
+                              <i class="fal fa-envelope text-theme me-2"></i>
+                              <?php echo get_sub_field('email');?>
+                           </a>
+                           <?php endif; ?>
+
+                        </p>
+                        
+                        <?php endif; ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+
+                        <?php if ( has_nav_menu( get_sub_field('links') ) ) : ?>
+                           <div class="menu-all-pages-container footer-menu">
+                           <?php wp_nav_menu(
+                              array(
+                                 'theme_location' => get_sub_field('links'),
+                                 'menu_id'        => 'primary-menu',
+                                 'menu_class'     => 'menu',
+                                 'container'      => 'ul',
+                              )
+                           ); ?>
+                           </div>
+                        <?php endif; ?>
+
+                    </div>
                 </div>
-             </div>
-             <div class="col-md-6 col-xl-auto">
-                <div class="widget widget_nav_menu footer-widget">
-                   <h3 class="widget_title">Lorem, ipsum dolor.</h3>
-                   <div class="menu-all-pages-container footer-menu">
-                      <ul class="menu">
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                      </ul>
-                   </div>
-                </div>
-             </div>
-             <div class="col-md-6 col-xl-auto">
-                <div class="widget widget_nav_menu footer-widget">
-                   <h3 class="widget_title">Lorem, ipsum dolor.</h3>
-                   <div class="menu-all-pages-container footer-menu">
-                      <ul class="menu">
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                      </ul>
-                   </div>
-                </div>
-             </div>
-             <div class="col-md-6 col-xl-auto">
-                <div class="widget widget_nav_menu footer-widget">
-                   <h3 class="widget_title">Lorem, ipsum dolor.</h3>
-                   <div class="menu-all-pages-container footer-menu">
-                      <ul class="menu">
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                         <li><a href="#">Lorem, ipsum.</a></li>
-                      </ul>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
+                <?php endwhile; ?>
+               
+            </div>
+        </div>
     </div>
+   <?php endif; ?>
+
     <div class="copyright-wrap">
-       <div class="container">
-          <div class="row justify-content-between align-items-center">
-             <div class="col-md-4 text-center">
-                <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2023 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">ROSE&RABBIT</a></p>
-             </div>
-             <div class="col-md-4 text-center">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/footer-logo.svg">
-             </div>
-          </div>
-       </div>
-    </div>
- </footer>
- <!--Login Model-->
- <div id="myModal" class="modal">
-    <div class="modal-content">
-       <div class="modal-header1">
-          <span class="close">&times;</span>
-          <h2>Login</h2>
-       </div>
-       <div class="modal-body">
-          <div class="container">
-             <div class="row">
-                <div class="col-lg-12 mt-5">
-                   <form action="#" method="POST" class="ajax-contact form-style6">
-                      <div class="form-group">
-                         <input type="number" class="formwidth" name="name" id="name" placeholder="Enter Mobile No*">
-                      </div>
-                      <button class="vs-btn mb-5" type="submit">Submit</button>
-                   </form>
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-4 text-center">
+                  <?php if( !empty( get_field('copyright', 'option') ) ): ?>
+                     <p class="copyright-text">
+                     <?php echo get_field('copyright', 'option');?>
+                     </p>
+                  <?php endif; ?>
                 </div>
-             </div>
-          </div>
-       </div>
+                <div class="col-md-4 text-center">
+                  <?php if( get_field('logos', 'option') ): ?>
+                  <img src="<?php echo get_field('logos', 'option')['url'];?>" alt="<?php echo get_field('logos', 'option')['alt'];?>"> 
+                  <?php endif; ?>
+                </div>
+            </div>
+        </div>
     </div>
- </div>
+</footer>
+<!--Login Model-->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header1">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 mt-5">
+                        <form action="#" method="POST" class="ajax-contact form-style6">
+                            <div class="form-group">
+                                <input type="number" class="formwidth" name="name" id="name"
+                                    placeholder="Enter Mobile No*">
+                            </div>
+                            <button class="vs-btn mb-5" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>
-<script>
-
-// jQuery('.mcsfw_remove').click(function(e) {
-// console.log('clicked :>> ');
-// })
-</script>

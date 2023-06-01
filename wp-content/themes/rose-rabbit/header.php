@@ -201,19 +201,19 @@
                                 <!--Start header Menu-->
                                 <div class="col-auto">
                                     <nav class="main-menu menu-style1 d-none d-lg-block">
-                                        <?php
-                                 if ( has_nav_menu( 'menu-1' ) ) :
-                                    wp_nav_menu(
-                                       array(
-                                          'theme_location' => 'menu-1',
-                                          'menu_id'        => 'primary-menu',
-                                          'container'      => 'ul',
-                                          'fallback_cb'    => 'WalkerNav::fallback',
-                                          'walker'         => new WalkerNav()
-                                       )
-                                    );
-                                 endif;
-                                 ?>
+                                    <?php
+                                    if ( has_nav_menu( 'header' ) ) :
+                                        wp_nav_menu(
+                                        array(
+                                            'theme_location' => 'header',
+                                            'menu_id'        => 'primary-menu',
+                                            'container'      => 'ul',
+                                            'fallback_cb'    => 'WalkerNav::fallback',
+                                            'walker'         => new WalkerNav()
+                                        )
+                                        );
+                                    endif;
+                                    ?>
                                     </nav>
                                 </div>
                                 <!--Start header Logo-->

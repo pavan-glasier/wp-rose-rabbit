@@ -177,13 +177,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Load WooCommerce compatibility file.
- */
-// if ( class_exists( 'WooCommerce' ) ) {
-// 	require get_template_directory() . '/inc/woocommerce.php';
-// }
-
-/**
  * Custom function file import.
  */
 require get_template_directory() . '/custom-functions.php';
@@ -191,4 +184,4 @@ require get_template_directory() . '/custom-functions.php';
 /**
  * include custom WalkerNav
  */
-require get_template_directory() . '/custom-templates/WalkerNav.php';
+require get_template_directory() . '/custom-templates/inc/WalkerNav.php';

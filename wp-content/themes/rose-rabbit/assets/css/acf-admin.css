@@ -1,0 +1,59 @@
+/* 
+ * ACF "repeat-horizontal" class, display repeaters in horizontal columns 
+ */
+
+.repeat-horizontal .acf-repeater .acf-row,
+.repeat-horizontal-2 .acf-repeater .acf-row,
+.repeat-horizontal-3 .acf-repeater .acf-row,
+.repeat-horizontal-4 .acf-repeater .acf-row,
+.repeat-horizontal-5 .acf-repeater .acf-row,
+.repeat-horizontal-6 .acf-repeater .acf-row {
+    display: grid;
+    grid-template-columns: 30px auto 30px;
+}
+.repeat-horizontal .acf-repeater tbody {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 332px 332px 332px 332px;
+}
+.repeat-horizontal-2 .acf-repeater tbody {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 50% 50%;
+}
+.repeat-horizontal-3 .acf-repeater tbody {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.repeat-horizontal-4 .acf-repeater tbody {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.repeat-horizontal-5 .acf-repeater tbody {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.repeat-horizontal-6 .acf-repeater tbody {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+}
+
+.display-grid ul.acf-radio-list, .display-grid ul.acf-checkbox-list {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10%;
+    column-gap: 15px;
+}
+.display-grid ul.acf-radio-list:before,
+.display-grid ul.acf-radio-list:after,
+.display-grid ul.acf-checkbox-list:before,
+.display-grid ul.acf-checkbox-list:after{
+	display: none;
+}
+.acf-admin-single-field-group .acf-field-object-flexible-content .acf-is-subfields .acf-field-object .acf-label,
+.acf-admin-single-field-group .acf-field-object-flexible-content .acf-is-subfields .acf-field-object .acf-input {
+    max-width: 100% !important;
+}
