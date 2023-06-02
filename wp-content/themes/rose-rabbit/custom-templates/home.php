@@ -7,7 +7,6 @@
  get_header(); ?>
 
 <?php if( have_rows('sections') ): ?>
-
 <main>
     <?php while( have_rows('sections') ): the_row(); ?>
     <?php if( get_row_layout() == 'banner_section'): ?>
@@ -493,7 +492,6 @@
     </section>
     <?php endif; ?>
     <?php endif; ?>
-
 
     <?php endwhile; ?>
 </main>

@@ -7,6 +7,19 @@
  * @package Rose_and_Rabbit
  */
 
+// Custom Admin Color Scheme
+function custom_color_admin_color_scheme() {
+	//Get the theme directory
+	$theme_dir = get_stylesheet_directory_uri();
+	//Custom Color
+	wp_admin_css_color( 'custom_color', __( 'Custom Color' ),
+	  $theme_dir . '/custom-admin.css',
+	  array( '#f2a5a2', '#f8f8f8', '#d54e21' , '#f2a5a2')
+	);
+  }
+  add_action('admin_init', 'custom_color_admin_color_scheme');
+  
+  
 
  if ( ! function_exists( 'rose_and_rabbit_register_nav_menu' ) ) {
 

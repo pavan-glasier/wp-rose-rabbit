@@ -79,9 +79,9 @@
     margin-bottom: 78px;
   }
   
-  .tf__work_single.first {
+  /* .tf__work_single.first {
     margin-left: 60px;
-  }
+  } */
   
   .tf__work_single {
     border: 30px solid #002633;
@@ -138,9 +138,9 @@
     z-index: -1;
   }
   
-  .tf__work_single.third {
+  /* .tf__work_single.third {
     margin-right: 60px;
-  }
+  } */
   
   .tf_about_2_img {
     position: relative;
