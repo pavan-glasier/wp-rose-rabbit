@@ -150,7 +150,8 @@ get_header(); ?>
     <?php endif; ?>
 
     <?php if( get_row_layout() == 'product_section'): ?>
-    <?php  
+    <?php if( get_sub_field('display_products') ): ?>
+    <?php
     $productArgs = array(
         'post_type'      => 'product',
         'posts_per_page' => 3,
@@ -191,14 +192,10 @@ get_header(); ?>
     </section>
     <?php wp_reset_query();?>
     <?php endif; ?>
-
     <?php endif; ?>
-
+    <?php endif; ?>
 
     <?php endwhile; ?>
-
-
     <?php endif; ?>
-
 </main>
 <?php get_footer(); ?>

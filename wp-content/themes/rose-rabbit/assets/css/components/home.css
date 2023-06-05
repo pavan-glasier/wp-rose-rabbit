@@ -415,7 +415,8 @@
 }
 
 .service-style1 .vs-icon img {
-	padding: 14px 0 0 0;
+	padding: 22px;
+	width: 100%;
 }
 
 .feature-style2 .arrow-shape {
