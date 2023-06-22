@@ -3,9 +3,9 @@ body {
   }
   
   /* Links */
-  a {
+  /* a {
     color: #faa392;
-  }
+  } */
   
   a:hover, a:active, a:focus {
     color: #faa392;
@@ -277,7 +277,7 @@ body {
   #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
   #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head,
   .folded #adminmenu li.current.menu-top {
-    color: #ffffff;
+    color: #000;
     background: #f2a5a2;
   }
   
@@ -289,7 +289,7 @@ body {
   #adminmenu li a:focus div.wp-menu-image:before,
   #adminmenu li.opensub div.wp-menu-image:before,
   .ie8 #adminmenu li.opensub div.wp-menu-image:before {
-    color: #ffffff;
+    color: #000;
   }
   
   /* Admin Menu: bubble */

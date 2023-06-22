@@ -130,7 +130,7 @@ jQuery( document ).ready(function() {
                     product_qty = $form.find('input[name=quantity]').val() || 1,
                     product_id = $form.find('input[name=product_id]').val() || id,
                     variation_id = $form.find('input[name=variation_id]').val() || 0;
-    
+            console.log('variation_id :>> ', variation_id);
             var data = {
                 action: 'woocommerce_ajax_add_to_cart',
                 product_id: product_id,

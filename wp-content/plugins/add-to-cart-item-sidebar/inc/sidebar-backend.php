@@ -41,7 +41,7 @@ do_settings_sections( 'mcsfw_settings' );
                         <th scope="row"><?php echo __('Enable','mini-cart-sidebar-for-woocommerce'); ?></th>
                         <td>
                             <label>
-                                <input type="checkbox" name="atc_enable" value="true"
+                                <input type="checkbox" class="ui-toggle" name="atc_enable" value="true"
                                     <?php checked('true', get_option("atc_enable",'true')); ?>>
                                 <?php echo __('Enable this option cart button will show.','mini-cart-sidebar-for-woocommerce'); ?>
                             </label>
@@ -52,7 +52,7 @@ do_settings_sections( 'mcsfw_settings' );
                         </th>
                         <td>
                             <label>
-                                <input type="checkbox" name="mobile_en" value="true"
+                                <input type="checkbox" class="ui-toggle" name="mobile_en" value="true"
                                     <?php checked('true', get_option("mobile_en",'true')); ?>>
                                 <?php echo __('Enable this option mobile view.','mini-cart-sidebar-for-woocommerce'); ?>
                             </label>
@@ -63,7 +63,7 @@ do_settings_sections( 'mcsfw_settings' );
                             <?php echo __('Show Product Count','mini-cart-sidebar-for-woocommerce'); ?></th>
                         <td>
                             <label>
-                                <input type="checkbox" name="show_product_count" value="true"
+                                <input type="checkbox" class="ui-toggle" name="show_product_count" value="true"
                                     <?php checked('true', get_option("show_product_count",'true')); ?>>
                                 <?php echo __('Show Product Count','mini-cart-sidebar-for-woocommerce'); ?>
                             </label>
@@ -93,7 +93,7 @@ do_settings_sections( 'mcsfw_settings' );
                         <th scope="row"><?php echo __('Show','mini-cart-sidebar-for-woocommerce'); ?></th>
                         <td>
                             <label>
-                                <input type="checkbox" name="enable_header_close" value="true"
+                                <input type="checkbox" class="ui-toggle" name="enable_header_close" value="true"
                                     <?php checked('true', get_option("enable_header_close",'true')); ?>>
                                 <b><?php echo __('Close Icon','mini-cart-sidebar-for-woocommerce'); ?></b>
                             </label>
@@ -109,49 +109,49 @@ do_settings_sections( 'mcsfw_settings' );
                         <td>
                             <label class="mcsfw_cart_body">
                                 <label>
-                                    <input type="checkbox" name="enable_pro_img" value="true"
+                                    <input type="checkbox" class="ui-toggle" name="enable_pro_img" value="true"
                                         <?php checked('true', get_option("enable_pro_img",'true')); ?>>
                                     <?php echo __('Product Image','mini-cart-sidebar-for-woocommerce'); ?>
                                 </label>
                             </label>
                             <label class="mcsfw_cart_body">
                                 <label>
-                                    <input type="checkbox" name="enable_pro_name" value="true"
+                                    <input type="checkbox" class="ui-toggle" name="enable_pro_name" value="true"
                                         <?php checked('true', get_option("enable_pro_name",'true')); ?>>
                                     <?php echo __('Product Name','mini-cart-sidebar-for-woocommerce'); ?>
                                 </label>
                             </label>
                             <label class="mcsfw_cart_body">
                                 <label>
-                                    <input type="checkbox" name="enable_pro_price" value="true"
+                                    <input type="checkbox" class="ui-toggle" name="enable_pro_price" value="true"
                                         <?php checked('true', get_option("enable_pro_price",'true')); ?>>
                                     <?php echo __('Product Price','mini-cart-sidebar-for-woocommerce'); ?>
                                 </label>
                             </label>
                             <label class="mcsfw_cart_body">
                                 <label>
-                                    <input type="checkbox" name="enable_pro_total" value="true"
+                                    <input type="checkbox" class="ui-toggle" name="enable_pro_total" value="true"
                                         <?php checked('true', get_option("enable_pro_total",'true')); ?>>
                                     <?php echo __('Product Total','mini-cart-sidebar-for-woocommerce'); ?>
                                 </label>
                             </label>
                             <label class="mcsfw_cart_body">
                                 <label>
-                                    <input type="checkbox" name="enable_pro_qty" value="true"
+                                    <input type="checkbox" class="ui-toggle" name="enable_pro_qty" value="true"
                                         <?php checked('true', get_option("enable_pro_qty",'true')); ?>>
                                     <?php echo __('Product qty box','mini-cart-sidebar-for-woocommerce'); ?>
                                 </label>
                             </label>
                             <label class="mcsfw_cart_body">
                                 <label>
-                                    <input type="checkbox" name="enable_pro_delete" value="true"
+                                    <input type="checkbox" class="ui-toggle" name="enable_pro_delete" value="true"
                                         <?php checked('true', get_option("enable_pro_delete",'true')); ?>>
                                     <?php echo __('Product Delete','mini-cart-sidebar-for-woocommerce'); ?>
                                 </label>
                             </label>
                             <label class="mcsfw_cart_body">
                                 <label>
-                                    <input type="checkbox" name="enable_product_link" value="true"
+                                    <input type="checkbox" class="ui-toggle" name="enable_product_link" value="true"
                                         <?php checked('true', get_option("enable_product_link",'true')); ?>>
                                     <?php echo __('Link to Product Page','mini-cart-sidebar-for-woocommerce'); ?>
                                 </label>
@@ -196,7 +196,7 @@ do_settings_sections( 'mcsfw_settings' );
                         </th>
                         <td>
                             <label>
-                                <input type="checkbox" name="slid_enable_desk" value="true"
+                                <input type="checkbox" class="ui-toggle" name="slid_enable_desk" value="true"
                                     <?php checked('true', get_option("slid_enable_desk",'true')); ?>>
                                 <?php echo __('Enable This Option Product Slider Will Display On Desktop.','mini-cart-sidebar-for-woocommerce'); ?>
                             </label>
@@ -207,7 +207,7 @@ do_settings_sections( 'mcsfw_settings' );
                         </th>
                         <td>
                             <label>
-                                <input type="checkbox" name="slid_enable_mob" value="true"
+                                <input type="checkbox" class="ui-toggle" name="slid_enable_mob" value="true"
                                     <?php checked('true', get_option("slid_enable_mob",'true')); ?>>
                                 <?php echo __('Enable This Option Product Slider Will Display On Mobile.','mini-cart-sidebar-for-woocommerce'); ?>
                             </label>
@@ -222,7 +222,7 @@ do_settings_sections( 'mcsfw_settings' );
                         <th scope="row"><?php echo __('Show','mini-cart-sidebar-for-woocommerce'); ?></th>
                         <td>
                             <label>
-                                <input type="checkbox" name="display_subtotal" value="true"
+                                <input type="checkbox" class="ui-toggle" name="display_subtotal" value="true"
                                     <?php checked('true', get_option("display_subtotal",'true')); ?>>
                                 <?php echo __('Subtotal','mini-cart-sidebar-for-woocommerce'); ?>
                             </label>

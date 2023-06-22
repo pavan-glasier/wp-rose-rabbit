@@ -12,8 +12,10 @@
  * @package Rose_and_Rabbit
  */
 
-get_header(); ?>
+ get_header(); ?>
+<?php if( get_post_type() == 'product'): ?>
 
+<?php elseif (get_post_type() == 'post'): ?>
 <main id="primary" class="site-main">
     <div class="space-top space-extra-bottom1 bg-gradient-1  mb-5">
         <div class="container">
@@ -21,7 +23,8 @@ get_header(); ?>
                 <div class="col-ms-12">
                     <div>
                         <h1 class="breadcumb-title story__tital text-first"><?php single_post_title();?></h1>
-                        <span class="breadcumb-titlespan"><?php echo get_post_field( 'post_content', get_queried_object_id() ); ?></span>
+                        <span
+                            class="breadcumb-titlespan"><?php echo get_post_field( 'post_content', get_queried_object_id() ); ?></span>
                     </div>
                 </div>
             </div>
@@ -38,9 +41,29 @@ get_header(); ?>
             <div class="row">
                 <?php if ( have_posts() ) :
 				/* Start the Loop */
-				while ( have_posts() ) : the_post();
-					get_template_part( 'template-parts/content', get_post_type() );
-				endwhile;
+				while ( have_posts() ) : the_post(); ?>
+                <div class="col-xl-4">
+                    <div class="vs-blog blog-style1 mb-5">
+                        <div class="blog-img">
+                            <a href="<?php the_permalink();?>">
+                                <?php echo do_shortcode('[featured_image]');?>
+                            </a>
+                        </div>
+                        <div class="blog-content text-center">
+                            <h3 class="blog-title h5">
+                                <a href="<?php the_permalink();?>"><?php echo the_title();?></a>
+                            </h3>
+                            <div class="blog-meta">
+                                <a href="#"><?php the_author();?></a>
+                                <a href="#"><?php echo get_the_date( 'd M, Y', $post->ID ); ?></a>
+                            </div>
+                        </div>
+                        <div class="package-btn">
+                            <a href="<?php the_permalink();?>" class="vs-btn">See More</a>
+                        </div>
+                    </div>
+                </div>
+                <?php endwhile;
 				do_shortcode('[rose_and_rabbit_pagination]');
 			else :
 				get_template_part( 'template-parts/content', 'none' );
@@ -50,4 +73,6 @@ get_header(); ?>
         </div>
     </section>
 </main><!-- #main -->
-<?php get_footer();
+<?php endif; ?>
+
+<?php get_footer();?>

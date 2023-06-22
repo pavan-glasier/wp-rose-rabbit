@@ -31,6 +31,9 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
 		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'This product is currently out of stock and unavailable.', 'woocommerce' ) ) ); ?></p>
 	<?php else : ?>
+		
+		<?php /*
+
 		<table class="variations" cellspacing="0" role="presentation">
 			<tbody>
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
@@ -52,6 +55,25 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
+		*/ ?>
+
+			<div class="variations">
+				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
+				<small class="d-block my-3"> 
+					<strong><?php echo strtoupper( wc_attribute_label( $attribute_name ) ); ?> : </strong>
+					<?php
+						wc_dropdown_variation_attribute_options(
+							array(
+								'options'   => $options,
+								'attribute' => $attribute_name,
+								'product'   => $product,
+							)
+						);
+						echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+					?> 
+				</small>
+				<?php endforeach; ?>
+			</div>
 		<?php do_action( 'woocommerce_after_variations_table' ); ?>
 
 		<div class="single_variation_wrap">
@@ -77,9 +99,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 			?>
 		</div>
 	<?php endif; ?>
-
 	<?php do_action( 'woocommerce_after_variations_form' ); ?>
 </form>
-
 <?php
 do_action( 'woocommerce_after_add_to_cart_form' );

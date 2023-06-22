@@ -158,7 +158,7 @@
   window.addEventListener('resize', slideImage);
 
   // text animation
-  var textWrapper = document.querySelector('.text-first ');
+  var textWrapper = document.querySelector('.text-first');
   if( textWrapper ){
 
      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");

@@ -22,7 +22,9 @@
         </div>
     </div>
 </div>
-
+<?php if(is_cart()): ?>
+    <?php the_content(); ?>
+<?php else: ?>
 <section class="space-extra-bottom shape-mockup-wrap">
     <div class="shape-mockup jump-reverse d-none d-xxxl-block">
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/sec-i-1-1.png" alt="shape">
@@ -40,3 +42,4 @@
         </div>
     </div>
 </section>
+<?php endif; ?>

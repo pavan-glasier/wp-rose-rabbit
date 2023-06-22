@@ -152,7 +152,7 @@ add_action( 'wp_enqueue_scripts', 'rose_and_rabbit_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-// require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -185,3 +185,9 @@ require get_template_directory() . '/custom-functions.php';
  * include custom WalkerNav
  */
 require get_template_directory() . '/custom-templates/inc/WalkerNav.php';
+
+
+/**
+ * include custom comments
+ */
+require get_template_directory() . '/custom-templates/inc/better-comments.php';

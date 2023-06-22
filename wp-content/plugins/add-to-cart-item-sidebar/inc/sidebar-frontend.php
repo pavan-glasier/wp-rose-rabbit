@@ -1107,7 +1107,9 @@ add_action( 'wp_ajax_nopriv_mcsfw_atcpro_qty_val', 'mcsfw_atcpro_qty_val' );
 function woocommerce_ajax_add_to_cart(){
     $product_id = apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
     $product_status = get_post_status($product_id);
-    if (WC()->cart->add_to_cart($product_id) && 'publish' === $product_status) {
+    $quantity = absint($_POST['quantity']?$_POST['quantity']:1);
+    $variation_id = absint($_POST['variation_id']?$_POST['variation_id']:0);
+    if (WC()->cart->add_to_cart($product_id, $quantity, $variation_id) && 'publish' === $product_status) {
         do_action('woocommerce_ajax_added_to_cart', $product_id);
         WC_AJAX :: get_refreshed_fragments();
         wp_send_json_success();
